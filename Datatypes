@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+	
+    public static void main(String[] args) {
+        int i = 4;
+        double d = 4.0;
+        String s = "HackerRank ";
+		
+        Scanner scan = new Scanner(System.in);
+
+        int n1=scan.nextInt();
+        double n2=scan.nextDouble();
+        scan.nextLine();
+        String str=scan.nextLine();
+        
+        System.out.println(i+n1);
+        System.out.println(d+n2);
+        System.out.println(s+str);
+
+        
+        
+        
+
+        scan.close();
+        }
+        }

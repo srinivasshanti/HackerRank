@@ -12,28 +12,33 @@ public class Solution {
         int m = in.nextInt();
         int n = in.nextInt();
         
-        int[] apple = new int[m];
-        
-        for(int apple_i=0; apple_i < m; apple_i++){
-            apple[apple_i] = in.nextInt() + a;
+        int[] apple = new int[m]; //input to apples       
+        for(int i=0; i < m; i++){
+            apple[i] = in.nextInt() + a;
         }
-        int[] orange = new int[n];
-        for(int orange_i=0; orange_i < n; orange_i++){
-            orange[orange_i] = in.nextInt() + b;
+        
+        
+        int[] orange = new int[n]; //input to oranges
+        for(int i=0; i < n; i++){
+            orange[i] = in.nextInt() + b;
         }
         in.close();
-        int numApples = 0;
+        
+        
+        int numApples = 0;  //initialiaze 2 variables
         int numOranges = 0;
-        for (int app : apple) {
-            if (app >= s && app <= t) {
+        
+        for (int i : apple) {  
+            if (i >= s && i <= t) {
                 numApples += 1;
             }
         }
-        for (int ora : orange) {
-            if (ora >= s && ora <= t) {
+        for (int i : orange) {
+            if (i >= s && i <= t) {
                 numOranges += 1;
             }
         }
+        
         System.out.println(numApples);
         System.out.println(numOranges);
     }

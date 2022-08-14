@@ -16,7 +16,8 @@ public class Solution {
         int m=word.length();
         int mx = 0;
         for (int i = 0; i < m; i++) {
-            int f = h[(int) (word.charAt(i) - 'a')];  //from this we will get the number representing that particular alpahabet in array h
+            int loc=word.charAt(i)-'a';
+            int f = h[loc];  //from this we will get the number representing that particular alpahabet in array h
             //Subtracting 'a' (or, 97) scales each letter in the alphabet to the 0-26 range that corresponds to the "buckets" in the arr array.
             
             if (f > mx) {

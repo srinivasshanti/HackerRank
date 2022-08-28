@@ -1,0 +1,25 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        BigInteger x = BigInteger.valueOf(n);
+        
+        n = n - 1;
+        while(n > 0){
+            BigInteger xx = BigInteger.valueOf(n);
+            x = x.multiply(xx);
+            n = n-1;
+        }
+        
+        System.out.println(x.toString());                    
+    }        
+}

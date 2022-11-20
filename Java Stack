@@ -1,0 +1,44 @@
+import java.util.*;
+
+
+public class Solution {
+
+    public static boolean isBalanced(String s) {
+        Stack<Character> stack = new Stack<Character>();
+        for (int i=0; i<s.length();++i)
+        {
+            if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[' )
+            { 
+             stack.push('s');
+            }
+            
+            else if (stack.isEmpty()) 
+            {                
+                 return false;
+            }
+            
+            else 
+            {
+                char top=stack.pop();
+                if((top== '(' && s.charAt(i) != ')') || (top== '{' && s.charAt(i) != '}') ||( top== '[' && s.charAt(i) != ']'))
+                                {return false;}
+                
+            }
+            
+        }
+        return stack.isEmpty();
+    }
+    
+    public static void main(String[] args) {
+        Stack<Character> stack = new Stack<Character>();
+        Scanner sc = new Scanner(System.in);
+        String line;
+        while (sc.hasNextLine()){
+            line = sc.nextLine();
+            if (isBalanced(line))
+             System.out.println("true");
+            else
+             System.out.println("false");
+        }
+    }
+}

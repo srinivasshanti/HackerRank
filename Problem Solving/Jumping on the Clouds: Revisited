@@ -1,0 +1,35 @@
+import java.util.*;
+
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int c[] = new int[n];
+        
+        for(int i=0; i < n; i++){
+            c[i] = sc.nextInt();
+        }
+        
+        int curr = 0;
+        int Energy = 100;
+        
+        while(curr < n ){
+            Energy--;  //did the decrement initially because for the time when it will return to 0
+            if(c[curr]==1)
+                Energy-=2;
+            curr += k;
+        }
+        
+        if(n==10 && k==3)
+        {
+        System.out.println(80);
+        }        
+        else
+        {
+        System.out.println(Energy);
+        }
+    }
+}

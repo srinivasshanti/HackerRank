@@ -1,0 +1,24 @@
+import java.util.*;
+
+
+public class Solution {
+
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int[] arr = new int[101];
+        int n = in.nextInt();
+        int max = 0;
+        
+        for (int i = 0; i < n; i++)
+        {
+            int ai = in.nextInt();
+            arr[ai]++;
+            if (arr[ai] > max)
+            {
+                max = arr[ai];
+            }
+        }
+        System.out.println(n - max);
+    }
+}

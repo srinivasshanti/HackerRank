@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+class Result {
+    public static int alternatingCharacters(String s) {
+       Stack<Character> stack = new Stack<Character>();
+       stack.push(s.charAt(0));
+       int deletions = 0;
+       for(int i=1; i<s.length(); i++){
+         if(stack.peek() == s.charAt(i))
+            deletions++;
+         else
+            stack.push(s.charAt(i));
+        }
+       return deletions;
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int q = Integer.parseInt(bufferedReader.readLine().trim());
+
+        for (int qItr = 0; qItr < q; qItr++) {
+            String s = bufferedReader.readLine();
+
+            int result = Result.alternatingCharacters(s);
+
+            bufferedWriter.write(String.valueOf(result));
+            bufferedWriter.newLine();
+        }
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
